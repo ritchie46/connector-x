@@ -31,11 +31,9 @@ jobs:
         image: mysql
         env:
           MYSQL_DATABASE: mysql
-          MYSQL_USER: mysql
-          MYSQL_PASSWORD: mysql
           MYSQL_ROOT_PASSWORD: mysql
         ports:
-          - 3306:3306
+          - 33306:3306
         options: >-
           --health-cmd "mysqladmin ping"
           --health-interval 10s
@@ -78,7 +76,7 @@ jobs:
           POSTGRES_URL: "postgresql://postgres:postgres@postgres:5432/postgres"
           SQLITE_URL: "sqlite:///tmp/test.db"
           MYSQL_HOST: localhost
-          MYSQL_PORT: 3306
+          MYSQL_PORT: 33306
           MYSQL_DB: mysql
           MYSQL_USER: root
           MYSQL_PASSWORD: mysql
@@ -91,7 +89,7 @@ jobs:
         env:
           POSTGRES_URL: "postgresql://postgres:postgres@postgres:5432/postgres"
           SQLITE_URL: "sqlite:///tmp/test.db"
-          MYSQL_URL: "mysql://root:mysql@localhost:3306/mysql"
+          MYSQL_URL: "mysql://root:mysql@localhost:33306/mysql"
 
       - name: Test build docs
         uses: actions-rs/cargo@v1
@@ -120,11 +118,9 @@ jobs:
         image: mysql
         env:
           MYSQL_DATABASE: mysql
-          MYSQL_USER: mysql
-          MYSQL_PASSWORD: mysql
           MYSQL_ROOT_PASSWORD: mysql
         ports:
-          - 3306:3306
+          - 33306:3306
         options: >-
           --health-cmd "mysqladmin ping"
           --health-interval 10s
@@ -165,7 +161,7 @@ jobs:
           POSTGRES_URL: "postgresql://postgres:postgres@postgres:5432/postgres"
           SQLITE_URL: "sqlite:///tmp/test.db"
           MYSQL_HOST: localhost
-          MYSQL_PORT: 3306
+          MYSQL_PORT: 33306
           MYSQL_DB: tpch
           MYSQL_USER: root
           MYSQL_PASSWORD: mysql
@@ -176,4 +172,4 @@ jobs:
         env:
           POSTGRES_URL: "postgresql://postgres:postgres@postgres:5432/postgres"
           SQLITE_URL: "sqlite:///tmp/test.db"
-          MYSQL_URL: "mysql://root:mysql@localhost:3306/mysql"
+          MYSQL_URL: "mysql://root:mysql@localhost:33306/mysql"
